@@ -44,7 +44,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-4 sm:p-6 lg:p-8">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 p-4 sm:p-6 lg:p-8">
 
     <!-- Background Audio Player (hidden, no controls) -->
     <audio id="background-audio" src="assets/itstime.mp3"></audio>
@@ -57,79 +57,59 @@
         <!-- Header -->
         <header class="relative mb-8 text-center">
             <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Pendaftaran</h1>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">Minggu Sempena Mesyuarat Agung Kesatuan JTMP</p>
+            <p class="text-gray-700 dark:text-gray-400 mt-2">Minggu Sempena Mesyuarat Agung Kesatuan JTMP</p>
         </header>
 
         <!-- Forms Grid -->
         <div id="forms-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <!-- Card 1: BGM (Annual Meeting) -->
-            <a id="form-card-1" href="https://forms.gle/qhb2NrJxUQEUj9Bj7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-96 sm:h-auto">
+            <a id="form-card-1" href="https://forms.gle/qhb2NrJxUQEUj9Bj7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-[28rem]">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full card-content">
-                    <div class="bg-indigo-100 dark:bg-indigo-900 p-4 rounded-lg mb-4">
-                        <svg class="w-10 h-10 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15,21H9a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Zm-3-4a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z" />
-                        </svg>
-                    </div>
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mesyuarat Agong Dwi Tahunan KKJTMP</h2>
                     <p class="response-count text-3xl font-bold text-indigo-600 dark:text-indigo-400">...</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
-                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-600 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
+                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-800 dark:text-gray-300">
                         <p class="last-response">Memuatkan data...</p>
                     </div>
                 </div>
             </a>
 
             <!-- Card 2: Kursus -->
-            <a id="form-card-2" href="https://forms.gle/Ya8iNfWmptHMbM9w8" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-96 sm:h-auto">
+            <a id="form-card-2" href="https://forms.gle/Ya8iNfWmptHMbM9w8" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-[28rem]">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full card-content">
-                    <div class="bg-green-100 dark:bg-green-900 p-4 rounded-lg mb-4">
-                        <svg class="w-10 h-10 text-green-500 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 [...]" />
-                        </svg>
-                    </div>
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Kursus Pemerkasaan Peranan dan Kesatuan Juruteknologi Makmal Perubatan: Meneroka Cabaran & Membangun Masa Depan[...]</h2>
                     <p class="response-count text-3xl font-bold text-green-600 dark:text-green-400">...</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
-                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-600 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
+                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-800 dark:text-gray-300">
                         <p class="last-response">Memuatkan data...</p>
                     </div>
                 </div>
             </a>
 
             <!-- Card 3: Night Gala -->
-            <a id="form-card-3" href="https://anonviranon.github.io/thekenduri/" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-96 sm:h-auto">
+            <a id="form-card-3" href="https://anonviranon.github.io/thekenduri/" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-[28rem]">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full card-content">
-                    <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg mb-4">
-                        <svg class="w-10 h-10 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a[...]"/>
-                        </svg>
-                    </div>
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Malam Gala "The Kenduri"</h2>
                     <p class="response-count text-3xl font-bold text-blue-600 dark:text-blue-400">...</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
-                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-600 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
+                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-800 dark:text-gray-300">
                         <p class="last-response">Memuatkan data...</p>
                     </div>
                 </div>
             </a>
 
             <!-- Card 4: All Events Booking -->
-            <a id="form-card-4" href="https://forms.gle/87WAQT17xkDq1pBL7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-96 sm:h-auto">
+            <a id="form-card-4" href="https://forms.gle/87WAQT17xkDq1pBL7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 h-[28rem]">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full card-content">
-                    <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg mb-4">
-                        <svg class="w-10 h-10 text-yellow-500 dark:text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0[...]"/>
-                        </svg>
-                    </div>
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Tempahan Pakej Hotel</h2>
                     <p class="response-count text-3xl font-bold text-yellow-600 dark:text-yellow-400">...</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
-                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-600 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
+                    <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-800 dark:text-gray-300">
                         <p class="last-response">Memuatkan data...</p>
                     </div>
                 </div>
@@ -263,4 +243,3 @@
     </script>
 </body>
 </html>
-
