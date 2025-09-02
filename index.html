@@ -16,6 +16,8 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            display: flex; /* Ensure the card itself is a flex container */
+            flex-direction: column;
         }
         .form-card:hover {
             transform: translateY(-5px);
@@ -26,7 +28,7 @@
         #form-card-2 { background-image: url('assets/card2.jpg'); }
         #form-card-3 { background-image: url('assets/card3.jpeg'); }
         #form-card-4 { background-image: url('assets/card4.jpeg'); }
-        /* Optional: Overlay for better readability */
+        /* Overlay for better readability */
         .card-overlay {
             position: absolute;
             inset: 0;
@@ -40,24 +42,19 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-4 sm:p-6 lg:p-8">
 
-    <!-- Background Audio Player (hidden, no controls) -->
     <audio id="background-audio" src="assets/itstime.mp3"></audio>
 
     <div class="max-w-7xl mx-auto">
-        <!-- Logo -->
         <div class="flex justify-center mb-6">
             <img src="assets/logo.png" alt="JTMP Logo" class="h-20 w-auto rounded-lg shadow" style="object-fit:contain;">
         </div>
-        <!-- Header -->
         <header class="relative mb-8 text-center">
             <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Pendaftaran</h1>
             <p class="text-gray-500 dark:text-gray-400 mt-2">Minggu Sempena Mesyuarat Agung Kesatuan JTMP</p>
         </header>
 
-        <!-- Forms Grid -->
         <div id="forms-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            <!-- Card 1: BGM (Annual Meeting) -->
             <a id="form-card-1" href="https://forms.gle/qhb2NrJxUQEUj9Bj7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
@@ -75,7 +72,6 @@
                 </div>
             </a>
 
-            <!-- Card 2: Kursus -->
             <a id="form-card-2" href="https://forms.gle/Ya8iNfWmptHMbM9w8" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
@@ -84,7 +80,7 @@
                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 [...]
                         </svg>
                     </div>
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Kursus Pemerkasaan Peranan dan Kesatuan Juruteknologi Makmal Perubatan: Meneroka Cabaran & Membangun Masa Depan[...]
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Kursus Pemerkasaan Peranan dan Kesatuan Juruteknologi Makmal Perubatan: Meneroka Cabaran & Membangun Masa Depan[...]</h2>
                     <p class="response-count text-3xl font-bold text-green-600 dark:text-green-400">...</p>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
                     <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-600 dark:text-gray-300">
@@ -93,13 +89,12 @@
                 </div>
             </a>
 
-            <!-- Card 3: Night Gala -->
             <a id="form-card-3" href="https://anonviranon.github.io/thekenduri/" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
                     <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg mb-4">
                         <svg class="w-10 h-10 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a[...]
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a[...]
                         </svg>
                     </div>
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Malam Gala "The Kenduri"</h2>
@@ -111,7 +106,6 @@
                 </div>
             </a>
 
-            <!-- Card 4: All Events Booking -->
             <a id="form-card-4" href="https://forms.gle/87WAQT17xkDq1pBL7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
                 <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
@@ -174,7 +168,7 @@
              */
             async function fetchSheetData(sheetId) {
                 // We only need the first column to get the count and last timestamp
-                const range = 'A:A'; 
+                const range = 'A:A';
                 const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${API_KEY}`;
                 
                 try {
@@ -214,20 +208,20 @@
                 // Format the timestamp for better readability
                 let formattedDate = 'N/A';
                 if (responseCount > 0) {
-                   try {
-                     const date = new Date(lastTimestamp);
-                     // Using a Malaysian locale for date formatting
-                     formattedDate = date.toLocaleString('ms-MY', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        hour12: true
-                     });
-                   } catch(e) {
-                        formattedDate = lastTimestamp; // Fallback to raw timestamp if parsing fails
-                   }
+                    try {
+                       const date = new Date(lastTimestamp);
+                       // Using a Malaysian locale for date formatting
+                       formattedDate = date.toLocaleString('ms-MY', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: '2-digit',
+                            hour12: true
+                          });
+                    } catch(e) {
+                         formattedDate = lastTimestamp; // Fallback to raw timestamp if parsing fails
+                    }
                 }
 
                 responseCountEl.textContent = responseCount.toLocaleString();
@@ -257,4 +251,3 @@
     </script>
 </body>
 </html>
-
