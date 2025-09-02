@@ -12,35 +12,46 @@
         }
         .form-card {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         .form-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
+        /* Individual card backgrounds */
+        #form-card-1 { background-image: url('assets/card1.jpg'); }
+        #form-card-2 { background-image: url('assets/card2.jpg'); }
+        #form-card-3 { background-image: url('assets/card3.jpeg'); }
+        #form-card-4 { background-image: url('assets/card4.jpeg'); }
+        /* Optional: Overlay for better readability */
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.85);
+            border-radius: 0.75rem;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .form-card > .flex { position: relative; z-index: 1; }
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-4 sm:p-6 lg:p-8">
 
-    <!-- Background Audio Player -->
-    <audio id="background-audio" src="assets/itstime.mp3" loop class="hidden"></audio>
+    <!-- Background Audio Player (hidden, no controls) -->
+    <audio id="background-audio" src="assets/itstime.mp3"></audio>
 
     <div class="max-w-7xl mx-auto">
+        <!-- Logo -->
+        <div class="flex justify-center mb-6">
+            <img src="assets/logo.png" alt="JTMP Logo" class="h-20 w-auto rounded-lg shadow" style="object-fit:contain;">
+        </div>
         <!-- Header -->
         <header class="relative mb-8 text-center">
             <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Pendaftaran</h1>
             <p class="text-gray-500 dark:text-gray-400 mt-2">Minggu Sempena Mesyuarat Agung Kesatuan JTMP</p>
-            
-            <!-- Audio Toggle Button -->
-            <button id="audio-toggle-btn" class="absolute top-0 right-0 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white focus:outline-none">
-                <!-- Speaker Off Icon -->
-                <svg id="speaker-off-icon" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-                </svg>
-                <!-- Speaker On Icon (hidden by default) -->
-                <svg id="speaker-on-icon" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-                </svg>
-            </button>
         </header>
 
         <!-- Forms Grid -->
@@ -48,6 +59,7 @@
 
             <!-- Card 1: BGM (Annual Meeting) -->
             <a id="form-card-1" href="https://forms.gle/qhb2NrJxUQEUj9Bj7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
+                <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
                     <div class="bg-indigo-100 dark:bg-indigo-900 p-4 rounded-lg mb-4">
                         <svg class="w-10 h-10 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -65,13 +77,14 @@
 
             <!-- Card 2: Kursus -->
             <a id="form-card-2" href="https://forms.gle/Ya8iNfWmptHMbM9w8" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
+                <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
                     <div class="bg-green-100 dark:bg-green-900 p-4 rounded-lg mb-4">
                         <svg class="w-10 h-10 text-green-500 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 1.085-1.085-1.085m1.085 1.085L5.25 16.5m7.5 0H3.75m14.25-13.5v11.25c0 .621-.504 1.125-1.125 1.125h-2.25" />
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 [...]
                         </svg>
                     </div>
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Kursus Pemerkasaan Peranan dan Kesatuan Juruteknologi Makmal Perubatan: Meneroka Cabaran & Membangun Masa Depan</h2>
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Kursus Pemerkasaan Peranan dan Kesatuan Juruteknologi Makmal Perubatan: Meneroka Cabaran & Membangun Masa Depan[...]
                     <p class="response-count text-3xl font-bold text-green-600 dark:text-green-400">...</p>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">Jumlah Pendaftaran</p>
                     <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 w-full text-sm text-gray-600 dark:text-gray-300">
@@ -82,10 +95,11 @@
 
             <!-- Card 3: Night Gala -->
             <a id="form-card-3" href="https://anonviranon.github.io/thekenduri/" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
+                <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
                     <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg mb-4">
                         <svg class="w-10 h-10 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.3-2.3L12.75 18l1.178-.398a3.375 3.375 0 002.3-2.3L16.5 14.25l.398 1.178a3.375 3.375 0 002.3 2.3l1.178.398-1.178.398a3.375 3.375 0 00-2.3 2.3z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a[...]
                         </svg>
                     </div>
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Malam Gala "The Kenduri"</h2>
@@ -99,10 +113,11 @@
 
             <!-- Card 4: All Events Booking -->
             <a id="form-card-4" href="https://forms.gle/87WAQT17xkDq1pBL7" target="_blank" class="form-card block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
+                <div class="card-overlay"></div>
                 <div class="flex flex-col items-start h-full">
                     <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg mb-4">
                         <svg class="w-10 h-10 text-yellow-500 dark:text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0[...]
                         </svg>
                     </div>
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Tempahan Pakej Hotel</h2>
@@ -119,24 +134,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- AUDIO CONTROLS ---
-            const audio = document.getElementById('background-audio');
-            const audioToggleBtn = document.getElementById('audio-toggle-btn');
-            const speakerOnIcon = document.getElementById('speaker-on-icon');
-            const speakerOffIcon = document.getElementById('speaker-off-icon');
-
-            audioToggleBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play();
-                    speakerOnIcon.classList.remove('hidden');
-                    speakerOffIcon.classList.add('hidden');
-                } else {
-                    audio.pause();
-                    speakerOnIcon.classList.add('hidden');
-                    speakerOffIcon.classList.remove('hidden');
+            // --- MUSIC AUTOPLAY AFTER 3 SEC ---
+            setTimeout(() => {
+                const audio = document.getElementById('background-audio');
+                if (audio) {
+                    audio.play().catch(() => {});
+                    audio.loop = true;
                 }
-            });
-
+            }, 3000);
 
             // --- CONFIGURATION ---
             const API_KEY = 'AIzaSyBr10obbPmWZKu8y_tvp-xqhfH9r64NaW8';
